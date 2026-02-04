@@ -261,6 +261,18 @@ void BlueprintOutput::addElementData( ElementRegionManager const & elemRegionMan
         writeOutWrappersAsFields( constitutiveModel, fields, topologyName, constitutiveModel.getName() );
       }
     } );
+
+    /// Migrate fields associated with this topology
+    for (conduit::index_t iTopo = 0; iTopo < fields.number_of_children(); ++iTopo)
+    {
+      auto& field = fields.child(iTopo);
+      if (field["topology"].as_char8_str() == topologyName)
+      {
+         topology["fields/"+field.name()] = field;
+	 // fields.remove(field.name());
+      }
+    }
+
   } );
 }
 

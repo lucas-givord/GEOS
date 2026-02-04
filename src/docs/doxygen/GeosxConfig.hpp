@@ -20,6 +20,9 @@
 /// Enables use of Caliper (CMake option ENABLE_ADIAK)
 /* #undef GEOS_USE_ADIAK */
 
+/// Enables use of Caliper (CMake option ENABLE_ADIAK)
+/* #undef GEOSX_USE_ADIAK */
+
 /// Enables use of CHAI (CMake option ENABLE_CHAI)
 #define GEOS_USE_CHAI
 
@@ -124,6 +127,9 @@
 
 /// The default block size for GEOSX on this platform
 #define GEOS_BLOCK_SIZE 32
+
+/// The default block size for GEOSX on this platform
+#define GEOSX_BLOCK_SIZE 32
 
 /// Version information for HDF5
 #define HDF5_VERSION 1.12.1

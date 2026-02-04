@@ -110,6 +110,13 @@ endif()
 geos_decorate_link_dependencies( LIST decoratedDependencies
                                  DEPENDENCIES ${dependencyList} )
 
+if ( ENABLE_CATALYST )
+  add_subdirectory(Catalyst)
+  list( APPEND fileIO_headers Outputs/CatalystOutput.hpp )
+  list( APPEND fileIO_sources Outputs/CatalystOutput.cpp )
+  list( APPEND dependencyList fileIOCatalyst ) 
+endif()
+
 blt_add_library( NAME       fileIO
                  SOURCES    ${fileIO_sources}
                  HEADERS    ${fileIO_headers}

@@ -27,6 +27,7 @@
 #include "fileIO/Catalyst/GenericConduitCapsule.tpp"
 #include "mesh/DomainPartition.hpp"
 #include "mesh/MeshLevel.hpp"
+#include "logger/Logger.hpp"
 #include "mesh/mpiCommunications/CommunicationTools.hpp"
 
 // TPL
